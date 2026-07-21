@@ -1,0 +1,40 @@
+.header{
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 0 3rem;
+    top: 0;
+    position: absolute;
+    font-family: "Ubuntu", sans-serif; ;
+        border-bottom: 1px solid
+ color-mix
+↳
+ color-mix(in srgb, #ffffff, transparent 90%)
+↳
+#ffffff1a
+(in srgb, #ffffff, transparent 90%);
+
+
+    .logo{
+        width: 150px;
+        height: 100%;
+        background-color: #f00;
+    }
+    .options{
+        width: 60%;
+        height: 100%;
+        background-color: #0f0;
+        display: flex;
+        justify-content:space-around;  
+        align-items:center;
+        cursor: pointer;
+    }
+    .hiden{
+        width: 20%;
+        height: 100%;
+        background-color: #00f;
+    }
+
+}
