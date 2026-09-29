@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# RB Consultant
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+RB Consultant is a React website for an accounting and business-services consultancy. It introduces the firm, presents its services and partners, and lets prospective clients send an enquiry through a contact form.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Responsive landing page with Home, About, Services, Team, Partners, and Contact sections
+- Rotating hero slides and a services carousel
+- Accounting services covering bookkeeping, tax returns, VAT, payroll, tax planning, and company formation
+- Contact form with required-field validation and EmailJS delivery
+- Partner and business branding assets
 
-### `npm start`
+## Tech stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 19 (Create React App / `react-scripts`)
+- Tailwind CSS with PostCSS and Autoprefixer, plus Sass
+- EmailJS (`emailjs-com`) for contact-form delivery
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Requirements
 
-### `npm test`
+- Node.js 18+ and npm
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run locally
 
-### `npm run build`
+Install dependencies and start the development server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open [http://localhost:3000](http://localhost:3000). The development server reloads when source files change.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Available commands
 
-### `npm run eject`
+```sh
+npm start       # Start the development server
+npm test        # Run the test suite in watch mode
+npm run build   # Create an optimized production build in build/
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The contact form sends submissions using EmailJS. To change the email service or template, update `SERVICE_ID`, `TEMPLATE_ID`, `PUBLIC_KEY`, and `TO_EMAIL` at the top of `src/Components/Main/Contact.js` and make sure the selected template accepts the form's `name`, `email`, `phone`, and `message` fields.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```text
+src/
+  App.js                 App entry component
+  index.css              Tailwind directives and global styles
+  Components/
+    home.js              Main landing page and site sections
+    Main/Contact.js      Contact form and EmailJS submission
+    Main/Header.js       Header component
+  Images/                Logos and partner imagery
+  Style/main.css         Main application styles
+public/                  Static HTML and public assets
+build/                   Generated production output (git-ignored)
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Production build
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Run `npm run build` to generate the static production site in `build/`. Deploy the contents of that directory to a static web host. Rebuild after source changes; the generated build output is not the source of truth.
